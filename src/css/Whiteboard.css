@@ -1,0 +1,39 @@
+
+.Whiteboard {
+    background-color: #111111;
+    height: 100%;
+    width: 100%;
+
+    display: grid;
+    grid-template-rows: auto 1fr;
+}
+
+.WhiteboardContent {
+    background-color: #ffffff;
+
+    height: 100%;
+    width: 100%;
+}
+
+.ToolPanel {
+    background-color: #f3f3f3;
+
+    padding: 6px 48px;
+
+    display: flex;
+    justify-content: space-between;
+}
+
+.ToolButton {
+    padding: 4px 16px;
+    width: 100%;
+    margin: 0 4px;
+    text-align: center;
+
+    background-color: #111111;
+    color: #ffffff;
+
+    font-weight: 400;
+
+    border-radius: 4px;
+}
