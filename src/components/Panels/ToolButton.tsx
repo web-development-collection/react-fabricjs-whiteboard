@@ -1,16 +1,17 @@
 import React, { FunctionComponent as FC } from 'react';
 
 
-interface Props {
+interface Props extends React.HTMLAttributes<HTMLDivElement> {
   name: string,
 }
 
 
-const ToolButton: FC<Props> = (props: Props) => {
+const ToolButton: FC<Props> = ({name, className, ...rest}: Props) => {
 
   return <div
-    className="ToolButton"
-    children={props.name}
+    className={`${className} ToolButton`}
+    children={name}
+    {...rest}
   />;
 };
 

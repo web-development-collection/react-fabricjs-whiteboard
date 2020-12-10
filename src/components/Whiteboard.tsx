@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react';
+import React, {Component} from 'react';
 import ToolPanel from "./Panels/ToolPanel";
 import WhiteboardContent from "./WhiteboardContent";
 import {WhiteboardContextValue, WhiteboardProvider} from "./Context/WhiteboardContext";
@@ -12,9 +12,22 @@ interface Props {
 }
 
 
-class Whiteboard extends PureComponent<Props> {
+class Whiteboard extends Component<Props, any> {
+  public state: any = {
+    tool: 'pen',
+  }
+
+
   public render() {
-    const whiteboardContextValue: WhiteboardContextValue = {};
+    const whiteboardContextValue: WhiteboardContextValue = {
+      setTool: (tool: string) => {
+        this.setState(() => ({ tool }));
+      },
+      tool: this.state.tool,
+      emitAction: (action: any) => {
+        this.props.onAction?.(action, null);
+      },
+    };
 
     return <div className='Whiteboard'>
 
